@@ -9,3 +9,4 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://isaax-demo.firebaseio.com"
 });
+

@@ -18,7 +18,7 @@ setInterval(async () => {
   try {
     const {stdout, stderr} = await promisify(exec)('vcgencmd measure_temp');
     const temp = parseFloat(stdout.replace(/temp=([0-9\.]*)'C/, '$1'));
-    const res = await ref.insert({
+    const res = await ref.push({
       device: deviceId,
       temp: temp
     });

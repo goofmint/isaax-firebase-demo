@@ -3,8 +3,7 @@ const {exec} = require('child_process');
 const {promisify} = require('util');
 const deviceId = 'pi';
 
-// const projectId = 'server/saving-data/fireblog';
-const collectionId = 'server/saving-data/cpu';
+const collectionId = 'cpu';
 const serviceAccount = require("./isaax-demo-firebase-adminsdk-p27d1-914f648c7d.json");
 
 admin.initializeApp({

@@ -19,6 +19,7 @@ setInterval(async () => {
     const obj = ref.child("temp");
     obj.push({
       device: deviceId,
+      timestamp: Date.now(),
       value: temp
     });
   } catch (e) {

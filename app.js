@@ -24,4 +24,4 @@ setInterval(async () => {
   } catch (e) {
     console.log(e)
   }
-}, 2000);
+}, 5000);

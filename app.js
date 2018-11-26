@@ -14,8 +14,9 @@ admin.initializeApp({
 
 setInterval(async () => {
   try {
-    const result = await promisify(exec)('vcgencmd measure_temp');
-    console.log('result', result);
+    const {stdout, stderr} = await promisify(exec)('vcgencmd measure_temp');
+    const temp = stdout.replace('\'C', '');
+    console.log(temp)
   } catch (e) {
     console.log(e)
   }

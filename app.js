@@ -20,9 +20,8 @@ setInterval(async () => {
     const temp = parseFloat(stdout.replace(/temp=([0-9\.]*)'C/, '$1'));
     const res = await ref.push({
       device: deviceId,
-      temp: temp
+      value: temp
     });
-    console.log(res);
   } catch (e) {
     console.log(e)
   }

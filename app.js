@@ -3,8 +3,8 @@ const {exec} = require('child_process');
 const {promisify} = require('util');
 const deviceId = 'pi';
 
-const projectId = 'server/saving-data/fireblog';
-const collectionId = 'cpu';
+// const projectId = 'server/saving-data/fireblog';
+const collectionId = 'server/saving-data/cpu';
 const serviceAccount = require("./isaax-demo-firebase-adminsdk-p27d1-914f648c7d.json");
 
 admin.initializeApp({
@@ -17,8 +17,8 @@ setInterval(async () => {
   try {
     const {stdout, stderr} = await promisify(exec)('vcgencmd measure_temp');
     const temp = parseFloat(stdout.replace(/temp=([0-9\.]*)'C/, '$1'));
-    const obj = ref.child("temp").push();
-    obj.set({
+    const obj = ref.child("temp");
+    obj.push({
       device: deviceId,
       value: temp
     });
